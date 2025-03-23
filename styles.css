@@ -1337,3 +1337,103 @@ footer {
         padding: 8px;
     }
 }
+
+/* ======= Events Page ======= */
+.events {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    padding-top: 100px;
+    border-left: 5px solid #17A2B8;
+}
+
+.events h2 {
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+}
+
+.events-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.event-card {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 250px;
+    max-width: 300px;
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.event-title {
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: "Dancing Script", cursive;
+}
+
+.event-date {
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    color: black;
+    font-weight: 600;
+    border: 1px solid black;
+    width: 250px;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+@media (max-width: 768px) {
+    .events {
+        padding: 15px;
+        margin: 20px;
+        padding-top: 80px;
+    }
+
+    .events h2 {
+        font-size: 24px;
+    }
+
+    .event-card {
+        min-width: 220px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .events {
+        padding: 10px;
+        padding-top: 60px;
+    }
+
+    .events h2 {
+        font-size: 22px;
+    }
+
+    .event-card {
+        min-width: 100%;
+    }
+}
