@@ -30,16 +30,36 @@ header {
     z-index: 1000;
 }
 
+/* Logo Styling */
 .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-}
-
-nav {
     display: flex;
     align-items: center;
 }
+
+.logo img {
+    height: 50px; /* Adjust height as needed */
+    width: auto; /* Keeps the aspect ratio */
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Push menu toggle and links to the right */
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 20px; /* Push to the right */
+    top: 50%;
+    transform: translateY(-50%); /* Center it vertically */
+}
+
 
 .nav-links {
     list-style: none;
@@ -70,6 +90,11 @@ nav {
 }
 
 @media (max-width: 900px) {
+    nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
     .nav-links {
         display: none;
         flex-direction: column;
@@ -513,3 +538,443 @@ footer {
         font-size: 18px;
     }
 }
+
+/*==Clubs and Societies Page ==*/
+.clubs{
+  padding-top: 100px;
+}
+
+.club-text{
+  align-items: center;
+  text-align: center
+}
+
+.club-text h2 {
+  font-size: 40px;
+  font-weight: 600;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+ .club-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 20px;
+    max-width: 100%;
+    scroll-snap-type: x mandatory;
+}
+
+.club-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    scroll-snap-align: center;
+}
+
+.club-card:hover {
+    transform: translateY(-5px);
+}
+
+.club-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 1px solid black;
+}
+
+.club-card h3 {
+    font-size: 20px;
+    font-family: "Dancing Script", cursive;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #2C3E50;
+}
+
+.club-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+.club-categories {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.club-categories h2 {
+  font-size: 30px;
+  font-weight: 600;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.club-categories ul {
+    list-style: none;
+    padding: 0;
+}
+
+.club-categories li {
+    display: inline-block;
+    background: #2C3E50;
+    color: white;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 270px;
+}
+
+
+.featured-club {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top: 40px;
+}
+
+.featured-club h2{
+  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+}
+
+.club-highlight {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.club-highlight img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.club-info h3 {
+    font-family: "Dancing Script", cursive;
+    color: #2C3E50;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.club-testimonials {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+ club-testimonials h2 {
+   font-size: 30px;
+   font-weight: 600;
+   font-family: 'Times New Roman', Times, serif;
+ }
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.testimonial {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide the checkbox */
+.popup-checkbox {
+    display: none;
+}
+
+/* Club CTA Section */
+.club-cta {
+    text-align: center;
+    padding: 30px;
+    background: #2C3E50;
+    color: white;
+    border-radius: 10px;
+}
+
+.cta-button,
+.register-button
+{
+  margin-top: 20px;
+    background: white;
+    color: #2C3E50;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 0.5px solid black;
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.register-button:hover{
+  transform: scale(1.09);
+}
+
+/* Pop-up Form Overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Show pop-up when checkbox is checked */
+.popup-checkbox:checked + .popup-overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Pop-up Form Content */
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    position: relative;
+}
+
+/* Form Inputs */
+.popup-content input, 
+.popup-content select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Ensure only one full card is displayed on phones */
+@media screen and (max-width: 767px) {
+    .club-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Show 4 cards per row on larger screens */
+@media screen and (min-width: 768px) {
+    .club-card {
+        flex: 0 0 calc(25% - 20px);
+        max-width: calc(25% - 20px);
+    }
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.pagination button:hover {
+    background: #555;
+}
+
+/* Larger screens (show 4 cards per view) */
+@media screen and (min-width: 768px) {
+    .club-card {
+        flex: 0 0 calc(25% - 20px);
+        max-width: calc(25% - 20px);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .clubs {
+        padding-top: 50px;
+    }
+
+    .club-text h2,
+    .club-categories h2,
+    .featured-club h2,
+    .club-testimonials h2 {
+        font-size: 28px;
+    }
+
+    .club-card h3 {
+        font-size: 18px;
+    }
+
+    .club-card p {
+        font-size: 12px;
+    }
+
+    .club-container {
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .club-card img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Tablets (Portrait & Landscape) */
+@media screen and (max-width: 991px) {
+    .club-highlight {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .club-highlight img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .club-info h3 {
+        font-size: 24px;
+    }
+
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Devices */
+@media screen and (max-width: 767px) {
+  .clubs{
+    padding-top: 100px;
+  }
+  
+    .club-text h2 {
+  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+}
+
+    .club-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding: 10px;
+    }
+
+    .club-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .club-card img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .club-categories ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .club-categories li {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px;
+        text-align: center;
+    }
+
+    .club-highlight {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .club-highlight img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .club-info h3 {
+        font-size: 20px;
+    }
+
+    .club-testimonials {
+        margin-bottom: 20px;
+    }
+
+    .club-cta {
+        padding: 20px;
+    }
+
+    .popup-content {
+        width: 90%;
+    }
+
+    .register-button {
+        width: 100%;
+    }
+
+    .pagination {
+        margin-top: 15px;
+    }
+
+    .pagination button {
+        padding: 8px 12px;
+        font-size: 16px;
+    }
+}
+
+/* Large Screens */
+@media screen and (min-width: 1025px) {
+    .club-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .club-card {
+        flex: 0 0 calc(25% - 20px);
+        max-width: calc(25% - 20px);
+    }
+
+    .club-highlight {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .testimonial-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
