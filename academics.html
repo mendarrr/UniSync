@@ -17,14 +17,17 @@
     <header>
         <h1>Academic Resources</h1>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Student Services</a></li>
-                <li><a href="clubs.html">Clubs & Societies</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="academics.html">Academics</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Student Services</a></li>
+            <li><a href="clubs.html">Clubs & Societies</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+          </div>
         </nav>
     </header>
 
@@ -43,6 +46,12 @@
     <footer>
         <p>&copy; 2025 UniSync | All Rights Reserved</p>
     </footer>
+<script>
+    function toggleMenu() {
+        const navLinks = document.querySelector(".nav-links");
+        navLinks.classList.toggle("active");
+    }
+</script>
 
 </body>
 </html>

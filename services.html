@@ -17,14 +17,17 @@
     <header>
         <h1>Student Services</h1>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Student Services</a></li>
-                <li><a href="clubs.html">Clubs & Societies</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="academics.html">Academics</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Student Services</a></li>
+            <li><a href="clubs.html">Clubs & Societies</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+          </div>
         </nav>
     </header>
 
@@ -33,37 +36,37 @@
           <div class="services-container">
             <div class="card">
               <div class="imgBx">
-                <img src="./assets/imgs/frontend.jpg" />
+                <img src="assets/imgs/academics1.png" />
               </div>
-              <img src="./assets/imgs/frontend.png" class="c3d" />
+              <img src="assets/imgs/academics2.png" class="c3d" />
               <h2>Academic Advising</h2>
             </div>
             <div class="card">
               <div class="imgBx">
-                <img src="./assets/imgs/backend.jpg" />
+                <img src="./assets/imgs/health1.png" />
               </div>
-              <img src="./assets/imgs/backend.png" class="c3d" />
+              <img src="./assets/imgs/health2.png" class="c3d" />
               <h2>Health Services</h2>
             </div>
             <div class="card">
               <div class="imgBx">
-                <img src="./assets/imgs/app.jpg" />
+                <img src="./assets/imgs/counsel1.png" />
               </div>
-              <img src="./assets/imgs/app.png" class="c3d" />
+              <img src="./assets/imgs/counsel2.png" class="c3d" />
               <h2>Guidance and Counselling</h2>
             </div>
             <div class="card">
               <div class="imgBx">
-                <img src="./assets/imgs/ui.jpg" />
+                <img src="./assets/imgs/career1.png" />
               </div>
-              <img src="./assets/imgs/ui.png" class="c3d" />
+              <img src="./assets/imgs/career2.png" class="c3d" />
               <h2>Career Services</h2>
             </div>
                         <div class="card">
               <div class="imgBx">
-                <img src="./assets/imgs/ui.jpg" />
+                <img src="./assets/imgs/comrade1.png" />
               </div>
-              <img src="./assets/imgs/ui.png" class="c3d" />
+              <img src="./assets/imgs/comrade2.png" class="c3d" />
               <h2>Comrade LifeHacks
               </h2>
             </div>
@@ -73,6 +76,12 @@
     <footer>
         <p>&copy; 2025 UniSync | All Rights Reserved</p>
     </footer>
+<script>
+    function toggleMenu() {
+        const navLinks = document.querySelector(".nav-links");
+        navLinks.classList.toggle("active");
+    }
+</script>
 
 </body>
 </html>

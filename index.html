@@ -6,18 +6,15 @@
     <meta name="description" content="UniSync - Your Ultimate Student Resource Hub">
     <title>UniSync | Home</title>
     <link rel="stylesheet" href="styles.css">
-        <script
-      defer
-      src="https://kit.fontawesome.com/c3d0b246eb.js"
-      crossorigin="anonymous"
-    ></script>
+    <script defer src="https://kit.fontawesome.com/c3d0b246eb.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
+    <!-- Header Section -->
     <header>
-        <h1>Welcome to UniSync</h1>
+        <div class="logo">UniSync</div>
         <nav>
-            <ul>
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Student Services</a></li>
                 <li><a href="clubs.html">Clubs & Societies</a></li>
@@ -25,22 +22,96 @@
                 <li><a href="academics.html">Academics</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
         </nav>
     </header>
 
+    <!-- Hero Banner -->
     <section class="banner">
-        <img src="images/banner.jpg" alt="Campus Image">
-        <p>Your one-stop platform for all student resources and events.</p>
+        <!-- <img src="images/banner.jpg" alt="Campus Image"> -->
+        <div class="banner-text">
+          <h1><span class="uni-banner">Uni</span>Sync</h1>
+            <p>Your one-stop platform for all student resources and events.</p>
+            <a href="services.html" class="btn">Explore Now</a>
+        </div>
     </section>
 
-    <section class="intro">
-        <h2>What We Offer</h2>
-        <p>Explore student services, join clubs, find events, and access academic resources.</p>
+    <!-- About Section -->
+ <section class="about">
+    <div class="about-content">
+        <h2>Our Mission</h2>
+        <p>At UniSync, we aim to enhance the student experience by providing a centralized platform for essential resources, events, and student community engagement.</p>
+    </div>
+
+    <div class="team">
+        <h2>Meet Our Team</h2>
+        <div class="team-container">
+            <div class="team-card">
+                <img src="assets/imgs/abby.png" alt="Abby">
+                <h3>Abby</h3>
+                <p>Student Engagement Lead</p>
+            </div>
+            <div class="team-card">
+                <img src="assets/imgs/joy.png" alt="Joy">
+                <h3>Joy</h3>
+                <p>Event Coordinator</p>
+            </div>
+            <div class="team-card">
+                <img src="assets/imgs/joyce.png" alt="Joyce">
+                <h3>Joyce</h3>
+                <p>Academic Resource Manager</p>
+            </div>
+            <div class="team-card">
+                <img src="assets/imgs/christine.png" alt="Christine">
+                <h3>Christine</h3>
+                <p>Community Engagement</p>
+            </div>
+            <div class="team-card">
+                <img src="assets/imgs/jubilee.png" alt="Jubilee">
+                <h3>Jubilee</h3>
+                <p>Student Services Coordinator</p>
+            </div>
+            <div class="team-card">
+                <img src="assets/imgs/annbel.png" alt="Annbel">
+                <h3>Annbel</h3>
+                <p>Tech & Design Lead</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- HomServices Section -->
+    <section class="services">
+        <div class="service-card">
+            <i class="fas fa-book"></i>
+            <h3>Academic Resources</h3>
+            <p>Access e-books, study materials, and academic guides.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-users"></i>
+            <h3>Student Clubs</h3>
+            <p>Join various clubs and societies that match your interests.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-calendar-alt"></i>
+            <h3>Upcoming Events</h3>
+            <p>Stay updated on university events, workshops, and meetups.</p>
+        </div>
     </section>
 
+    <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 UniSync | All Rights Reserved</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
 
 </body>
 </html>
