@@ -121,7 +121,6 @@ nav {
 }
 
 /* ========== Home Page ========== */
-/* Hero Banner */
 .banner {
     position: relative;
     width: 100%;
@@ -133,7 +132,6 @@ nav {
     overflow: hidden;
 }
 
-/* Desaturate & Darken Background */
 .banner::before {
     content: "";
     position: absolute;
@@ -144,7 +142,6 @@ nav {
     z-index: 1;
 }
 
-/* Text Content */
 .banner-text {
     position: relative;
     z-index: 2;
@@ -169,7 +166,6 @@ nav {
     font-family: 'Times New Roman', Times, serif;
 }
 
-/* Call-to-Action Button */
 .btn {
     display: inline-block;
     padding: 12px 24px;
@@ -187,7 +183,6 @@ nav {
     transform: scale(1.05);
 }
 
-/* Fade-in Animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -200,7 +195,7 @@ nav {
 }
 
 /*Responsiveness*/
-@media screen and (max-width: 1024px) { /* Tablets */
+@media screen and (max-width: 1024px) { 
     .banner {
         height: 60vh;
     }
@@ -216,7 +211,7 @@ nav {
     }
 }
 
-@media screen and (max-width: 768px) { /* Small Tablets & Large Phones */
+@media screen and (max-width: 768px) { 
     .banner {
         height: 50vh;
     }
@@ -232,7 +227,7 @@ nav {
     }
 }
 
-@media screen and (max-width: 480px) { /* Mobile Devices */
+@media screen and (max-width: 480px) {
     .banner {
         height: 65vh;
     }
@@ -252,7 +247,6 @@ nav {
     }
 }
 
-/*Home Services Section*/
 .services {
     display: flex;
     justify-content: center;
@@ -279,8 +273,6 @@ nav {
     margin: 10px 0;
 }
 
-/*Home About Services Section*/
-/* About Section */
 .about {
     text-align: center;
     padding: 50px 20px;
@@ -302,7 +294,6 @@ nav {
     color: #1ABC9C;
 }
 
-/* Team Section */
 .team {
     margin-top: 50px;
 }
@@ -314,7 +305,6 @@ nav {
     margin-bottom: 30px;
 }
 
-/* Team Grid */
 .team-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -325,7 +315,6 @@ nav {
     margin: auto;
 }
 
-/* Team Cards */
 .team-card {
     background: white;
     padding: 20px;
@@ -361,7 +350,6 @@ nav {
     color: #555;
 }
 
-/* Responsive Styling */
 @media screen and (max-width: 768px) {
     .team-container {
         grid-template-columns: repeat(2, 1fr);
@@ -389,25 +377,36 @@ nav {
     color: white;
     padding: 80px 20px;
     text-align: center;
+    margin-bottom: -60px;
 }
 
 .services-section h1 {
-    font-size: 60px;
+    font-size: 80px;
     font-weight: 600;
-    color: #1ABC9C;
+    color: black;
     font-family: "Dancing Script", cursive;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
-/* Services Container */
 .services-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
     gap: 20px;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* Service Cards */
+@media screen and (max-width: 768px) {
+    .services-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+}
+
 .card {
     position: relative;
     width: 90%;
@@ -423,7 +422,6 @@ nav {
     transform: scale(1.05);
 }
 
-/* Image Box */
 .card .imgBx {
     position: absolute;
     inset: 0;
@@ -444,7 +442,6 @@ nav {
     opacity: 0;
 }
 
-/* Hover Effect */
 .card .c3d {
     position: absolute;
     top: 50%;
@@ -460,7 +457,6 @@ nav {
     transform: translate(-50%, -60%);
 }
 
-/* Card Title */
 .card h2 {
     position: absolute;
     bottom: 20px;
@@ -492,7 +488,6 @@ footer {
     text-align: center;
 }
 
-/* ========== Responsive Design ========== */
 @media screen and (max-width: 1024px) {
     .services-section h1 {
         font-size: 50px;
@@ -511,7 +506,7 @@ footer {
 
 @media screen and (max-width: 768px) {
     .services-section h1 {
-        font-size: 45px;
+        font-size: 50px;
     }
 
     .card {
@@ -527,7 +522,7 @@ footer {
 
 @media screen and (max-width: 480px) {
     .services-section h1 {
-        font-size: 40px;
+        font-size: 50px;
     }
 
     .card {
@@ -689,7 +684,6 @@ footer {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Hide the checkbox */
 .popup-checkbox {
     display: none;
 }
@@ -740,13 +734,11 @@ footer {
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Show pop-up when checkbox is checked */
 .popup-checkbox:checked + .popup-overlay {
     visibility: visible;
     opacity: 1;
 }
 
-/* Pop-up Form Content */
 .popup-content {
     background: white;
     padding: 20px;
@@ -757,7 +749,6 @@ footer {
     position: relative;
 }
 
-/* Form Inputs */
 .popup-content input, 
 .popup-content select {
     width: 100%;
@@ -767,7 +758,6 @@ footer {
     border-radius: 5px;
 }
 
-/* Close Button */
 .close-btn {
     position: absolute;
     top: 10px;
@@ -776,7 +766,6 @@ footer {
     cursor: pointer;
 }
 
-/* Ensure only one full card is displayed on phones */
 @media screen and (max-width: 767px) {
     .club-card {
         flex: 0 0 100%;
@@ -784,7 +773,6 @@ footer {
     }
 }
 
-/* Show 4 cards per row on larger screens */
 @media screen and (min-width: 768px) {
     .club-card {
         flex: 0 0 calc(25% - 20px);
@@ -811,7 +799,6 @@ footer {
     background: #555;
 }
 
-/* Larger screens (show 4 cards per view) */
 @media screen and (min-width: 768px) {
     .club-card {
         flex: 0 0 calc(25% - 20px);
@@ -850,7 +837,6 @@ footer {
     }
 }
 
-/* Tablets (Portrait & Landscape) */
 @media screen and (max-width: 991px) {
     .club-highlight {
         flex-direction: column;
@@ -872,7 +858,6 @@ footer {
     }
 }
 
-/* Mobile Devices */
 @media screen and (max-width: 767px) {
   .clubs{
     padding-top: 100px;
@@ -955,7 +940,6 @@ footer {
     }
 }
 
-/* Large Screens */
 @media screen and (min-width: 1025px) {
     .club-container {
         display: flex;
