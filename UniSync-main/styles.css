@@ -1,0 +1,1459 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #ECF0F1;
+    color: #2C3E50;
+    line-height: 1.6;
+}
+
+/* ========== Navbar ========== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2C3E50;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: lightskyblue;
+    border-bottom: 2px solid lightskyblue;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #2C3E50;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* ========== Home Page ========== */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('assets/imgs/banner.png') no-repeat center center/cover;
+    overflow: hidden;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    filter: saturate(0.3);
+    z-index: 1;
+}
+
+.banner-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    max-width: 80%;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.banner-text h1 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.banner-text p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 20px;
+    font-weight: 600;
+    background: rgba(92, 136, 164, 1);
+    color: white;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(255, 102, 51, 0.3);
+}
+
+.btn:hover {
+    background: lightskyblue;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 1024px) { 
+    .banner {
+        height: 60vh;
+    }
+    .banner-text h1 {
+        font-size: 50px;
+    }
+    .banner-text p {
+        font-size: 28px;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 768px) { 
+    .banner {
+        height: 50vh;
+    }
+    .banner-text h1 {
+        font-size: 45px;
+    }
+    .banner-text p {
+        font-size: 25px;
+    }
+    .btn {
+        padding: 8px 18px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .banner {
+        height: 65vh;
+    }
+    .banner-text {
+        max-width: 90%;
+        padding: 15px;
+    }
+    .banner-text h1 {
+        font-size: 30px;
+    }
+    .banner-text p {
+        font-size: 18px;
+    }
+    .btn {
+        padding: 6px 16px;
+        font-size: 16px;
+    }
+}
+
+.services {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 50px 20px;
+    flex-wrap: wrap;
+} 
+.service-link {
+    text-decoration: none;
+}
+
+.service-card  {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.service-card i {
+    font-size: 40px;
+    color: #6CAEC4ff;
+}
+
+.service-card h3 {
+    margin: 10px 0;
+}
+
+.about {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f8f9fa;
+    color: #2C3E50;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.about h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #6CAEC4;
+}
+
+.team {
+    margin-top: 50px;
+}
+
+.team h2 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #6CAEC4ff;
+    margin-bottom: 30px;
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.team-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+.team-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 1px solid black;
+}
+
+.team-card h3 {
+    font-size: px;
+    font-family:  "Dancing Script", cursive;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #2C3E50;
+}
+
+.team-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+@media screen and (max-width: 768px) {
+    .team-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .team-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .about h2, .team h2 {
+        font-size: 28px;
+    }
+
+    .team-card img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* ========== Services Page ========== */
+.services-section {
+    background: whitesmoke;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    margin-bottom: -60px;
+}
+
+.services-section h1 {
+    font-size: 80px;
+    font-weight: 600;
+    color: black;
+    font-family: "Dancing Script", cursive;
+    margin-bottom: 20px;
+}
+
+.services-container {
+    display: grid;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 60px;
+}
+
+@media screen and (min-width: 1025px) {
+    .services-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .services-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, auto);
+    }
+}
+
+.card {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: black;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card .imgBx {
+    position: absolute;
+    inset: 0;
+    background: black;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s;
+    border-radius: 20px;
+}
+
+.card:hover .imgBx img {
+    opacity: 0;
+}
+
+.card .c3d {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+    z-index: 1;
+}
+
+.card:hover .c3d {
+    opacity: 1;
+    transform: translate(-50%, -60%);
+}
+
+.card h2 {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: aliceblue;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: "Dancing Script", cursive;
+    border: 1px solid whitesmoke;
+    padding: 8px 15px;
+    background: #181725;
+    text-align: center;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.card h2:hover {
+    background: transparent;
+    color: white;
+}
+
+/* ========== Footer ========== */
+footer {
+    background: #2C3E50;
+    color: white;
+    padding: 15px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+    .services-section h1 {
+        font-size: 50px;
+    }
+
+    .card {
+        max-width: 80%;
+        height: 280px;
+    }
+
+    .card h2 {
+        font-size: 22px;
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .services-section h1 {
+        font-size: 50px;
+    }
+
+    .card {
+        max-width: 90%;
+        height: 250px;
+    }
+
+    .card h2 {
+        font-size: 20px;
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .services-section h1 {
+        font-size: 50px;
+    }
+
+    .card {
+        height: 220px;
+    }
+
+    .card h2 {
+        font-size: 18px;
+    }
+}
+
+/*==Clubs and Societies Page ==*/
+.clubs{
+  padding-top: 100px;
+}
+
+.club-text{
+  align-items: center;
+  text-align: center
+}
+
+.club-text h2 {
+  font-size: 40px;
+  font-weight: 600;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+ .club-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 20px;
+    max-width: 100%;
+    scroll-snap-type: x mandatory;
+}
+
+.club-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    scroll-snap-align: center;
+}
+
+.club-card:hover {
+    transform: translateY(-5px);
+}
+
+.club-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 1px solid black;
+}
+
+.club-card h3 {
+    font-size: 20px;
+    font-family: "Dancing Script", cursive;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #2C3E50;
+}
+
+.club-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+.club-categories {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.club-categories h2 {
+  font-size: 30px;
+  font-weight: 600;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.club-categories ul {
+    list-style: none;
+    padding: 0;
+}
+
+.club-categories li {
+    display: inline-block;
+    background: #2C3E50;
+    color: white;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 270px;
+}
+
+
+.featured-club {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top: 40px;
+}
+
+.featured-club h2{
+  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+}
+
+.club-highlight {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.club-highlight img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.club-info h3 {
+    font-family: "Dancing Script", cursive;
+    color: #2C3E50;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.club-testimonials {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+ club-testimonials h2 {
+   font-size: 30px;
+   font-weight: 600;
+   font-family: 'Times New Roman', Times, serif;
+ }
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.testimonial {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.popup-checkbox {
+    display: none;
+}
+
+/* Club CTA Section */
+.club-cta {
+    text-align: center;
+    padding: 30px;
+    background: #2C3E50;
+    color: white;
+    border-radius: 10px;
+}
+
+.cta-button,
+.register-button
+{
+  margin-top: 20px;
+    background: rgba(92, 136, 164, 1);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 0.5px solid black;
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+
+.register-button:hover{
+  transform: scale(1.09);
+  background: lightskyblue;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.popup-checkbox:checked + .popup-overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    position: relative;
+}
+
+.popup-content input, 
+.popup-content select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    .club-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .club-card {
+        flex: 0 0 calc(25% - 20px);
+        max-width: calc(25% - 20px);
+    }
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.pagination button:hover {
+    background: #555;
+}
+
+@media screen and (min-width: 768px) {
+    .club-card {
+        flex: 0 0 calc(25% - 20px);
+        max-width: calc(25% - 20px);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .clubs {
+        padding-top: 100px;
+    }
+
+    .club-text h2,
+    .club-categories h2,
+    .featured-club h2,
+    .club-testimonials h2 {
+        font-size: 28px;
+    }
+
+    .club-card h3 {
+        font-size: 18px;
+    }
+
+    .club-card p {
+        font-size: 12px;
+    }
+
+    .club-container {
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .club-card img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .clubs {
+    padding-top: 100px;
+  }
+
+    .club-highlight {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .club-highlight img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .club-info h3 {
+        font-size: 24px;
+    }
+
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 767px) {
+  .clubs{
+    padding-top: 100px;
+  }
+  
+    .club-text h2 {
+  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+}
+
+    .club-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding: 10px;
+    }
+
+    .club-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .club-card img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .club-categories ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .club-categories li {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px;
+        text-align: center;
+    }
+
+    .club-highlight {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .club-highlight img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .club-info h3 {
+        font-size: 20px;
+    }
+
+    .club-testimonials {
+        margin-bottom: 20px;
+    }
+
+    .club-cta {
+        padding: 20px;
+    }
+
+    .popup-content {
+        width: 90%;
+    }
+
+    .register-button {
+        width: 100%;
+    }
+
+    .pagination {
+        margin-top: 15px;
+    }
+
+    .pagination button {
+        padding: 8px 12px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .club-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .club-card {
+        flex: 0 0 calc(25% - 20px);
+        max-width: calc(25% - 20px);
+    }
+
+    .club-highlight {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .testimonial-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+/*=== Contact Us Page ===*/
+.contact-form {
+  padding: 80px 20px;
+  text-align: center;
+  background: #f8f9fa;
+}
+
+.contact-form h2 {
+  font-size: 28px;
+  font-weight: 600;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 20px;
+}
+
+#contactForm {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#contactForm {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.contact-form {
+  padding-bottom: 20px;
+}
+
+.contact-btn {
+  margin-bottom: 0;
+}
+
+#formMessage {
+  margin: 5px 0;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+.input-group textarea {
+  height: 100px;
+  resize: none;
+}
+
+.contact-btn {
+  text-align: center;
+}
+
+.contact-btn button {
+  background: rgba(92, 136, 164, 1);
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-btn button:hover {
+  background: lightskyblue;
+  transform: scale(1.09);
+}
+
+#formMessage {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #28a745;
+}
+
+/*=== Footer ===*/
+.sci {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.sci li {
+  margin: 0 10px;
+}
+
+.sci li a {
+  color: #fff;
+  font-size: 30px;
+  transition: 0.3s;
+}
+
+.sci li a:hover {
+  color: #007bff;
+}
+
+/*=== Responsive Design ===*/
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 50px 15px;
+  }
+
+  #contactForm {
+    width: 90%;
+  }
+
+  .contact-btn button {
+    width: 100%;
+  }
+
+  .sci li {
+    margin: 0 5px;
+  }
+
+  .sci li a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form h2 {
+    font-size: 24px;
+  }
+
+  #contactForm {
+    padding: 15px;
+  }
+
+  .input-group input,
+  .input-group textarea {
+    font-size: 14px;
+  }
+
+  .contact-btn button {
+    font-size: 16px;
+  }
+
+  footer p {
+    font-size: 12px;
+  }
+}
+
+/* == Academics Page ==*/
+/* ======= Academics Section ======= */
+.academics {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding-top: 100px; /* Space for navbar */
+    border-left: 5px solid #007BFF;
+}
+
+.academics h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.academics p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.academics ul {
+    list-style: none;
+    padding: 0;
+}
+
+.academics li {
+    font-size: 16px;
+    color: #444;
+    background: #f9f9f9;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* ======= Course Descriptions Section ======= */
+.course-descriptions {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding-top: 100px;
+    border-left: 5px solid #328DCBff;
+}
+
+.course-descriptions h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.course-descriptions p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.course-descriptions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.course-descriptions li {
+    font-size: 16px;
+    color: #444;
+    background: #f9f9f9;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* ======= Faculty Section ======= */
+.faculty {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding-top: 100px;
+    border-left: 5px solid hsla(207, 89%, 78%, 1);
+}
+
+.faculty h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.faculty p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.faculty ul {
+    list-style: none;
+    padding: 0;
+}
+
+.faculty li {
+    font-size: 16px;
+    color: #444;
+    background: #f9f9f9;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* ======= Academic Policies Section ======= */
+.academic-policies {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding-top: 100px;
+    border-left: 5px solid blue;
+}
+
+.academic-policies h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.academic-policies p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.academic-policies ul {
+    list-style: none;
+    padding: 0;
+}
+
+.academic-policies li {
+    font-size: 16px;
+    color: #444;
+    background: #f9f9f9;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .academics, .course-descriptions, .faculty, .academic-policies {
+        padding: 15px;
+        margin: 20px;
+        padding-top: 80px; /* Reduce top padding for smaller screens */
+    }
+
+    .academics h2, .course-descriptions h2, .faculty h2, .academic-policies h2 {
+        font-size: 24px;
+    }
+
+    .academics p, .course-descriptions p, .faculty p, .academic-policies p {
+        font-size: 16px;
+    }
+
+    .academics li, .course-descriptions li, .faculty li, .academic-policies li {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .academics, .course-descriptions, .faculty, .academic-policies {
+        padding: 10px;
+        padding-top: 60px;
+    }
+
+    .academics h2, .course-descriptions h2, .faculty h2, .academic-policies h2 {
+        font-size: 22px;
+    }
+
+    .academics p, .course-descriptions p, .faculty p, .academic-policies p {
+        font-size: 14px;
+    }
+
+    .academics li, .course-descriptions li, .faculty li, .academic-policies li {
+        font-size: 13px;
+        padding: 8px;
+    }
+}
+
+/* ======= Events Page ======= */
+.events {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    padding-top: 100px;
+    border-left: 5px solid #17A2B8;
+}
+
+.events h2 {
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+}
+
+.events-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.event-card {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 250px;
+    max-width: 300px;
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.event-title {
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: "Dancing Script", cursive;
+}
+
+.event-date {
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    color: black;
+    font-weight: 600;
+    border: 1px solid black;
+    width: 250px;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+@media (max-width: 768px) {
+    .events {
+        padding: 15px;
+        margin: 20px;
+        padding-top: 80px;
+    }
+
+    .events h2 {
+        font-size: 24px;
+    }
+
+    .event-card {
+        min-width: 220px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .events {
+        padding: 10px;
+        padding-top: 60px;
+    }
+
+    .events h2 {
+        font-size: 22px;
+    }
+
+    .event-card {
+        min-width: 100%;
+    }
+}
