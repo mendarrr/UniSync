@@ -71,11 +71,12 @@ nav {
     text-decoration: none;
     color: white;
     font-size: 18px;
-    transition: color 0.3s;
+    transition: all 0.3s ease-in-out;
 }
 
 .nav-links a:hover {
     color: #1ABC9C;
+    border-bottom: 2px solid cyan;
 }
 
 .menu-toggle {
@@ -175,7 +176,7 @@ nav {
 }
 
 .btn:hover {
-    background: #D35400;
+    background: lightskyblue;
     transform: scale(1.05);
 }
 
@@ -723,10 +724,9 @@ footer {
 
 .register-button:hover{
   transform: scale(1.09);
-  background: #D35400;
+  background: lightskyblue;
 }
 
-/* Pop-up Form Overlay */
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -1067,7 +1067,8 @@ footer {
 }
 
 .contact-btn button:hover {
-  background: #D35400;
+  background: lightskyblue;
+  transform: scale(1.09);
 }
 
 #formMessage {
